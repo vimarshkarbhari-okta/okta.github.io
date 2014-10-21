@@ -13,7 +13,7 @@ http://jekyllrb.com/
 1. Clone repository
 2. `~ $ gem install github-pages` or `bundle install`'` if you use bundler
 3. `~ $ cd okta.github.io`
-4. `~ $ jekyll serve -w -t`
+4. `~ $ LC_ALL="en_US.UTF-8" jekyll serve -w -t`
 5. Change CNAME with the right subdomain
 6. Visit `http://localhost:4000` in your browser
 

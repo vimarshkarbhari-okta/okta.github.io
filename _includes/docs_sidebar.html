@@ -1,6 +1,6 @@
 
 {% assign section = page.path | split: '/' %}
-{% assign page_name = page.title | replace: ' ', '_' | downcase %}
+{% assign page_name = page.path | replace: '.md', '' | split: '/' | last | downcase %}
 
 {% for nav in site.data.docs %}
   <div class="docs-sidebar-block">
@@ -14,7 +14,7 @@
           {% if doc_page.layout == 'docs_page' %}
             {% assign name = doc_page.path | replace: '.md', '' | split: '/' | last | downcase %}
             {% if name == item %}
-              <li data-name="{{ doc_page.title }}" {% if page_name == name %}class="on"{% endif %}>
+              <li data-name="{{ nav.title }} - {{ doc_page.title }}" {% if page_name == name %}class="on"{% endif %}>
                 <a href="/docs/{{ nav.section }}/{{ item }}.html">{{ doc_page.title }}</a>
               </li>
             {% endif %}
