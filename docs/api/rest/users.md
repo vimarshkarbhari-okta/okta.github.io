@@ -226,7 +226,7 @@ changeRecoveryQuestion | [Changes a user's recovery credential](#change-recovery
 ### Create User
 {:.api .api-operation}
 
-<span class="api-uri-template api-uri-post"><span class="api-label">POST</span> /users</span>
+<span class="api-uri-template api-uri-post"><span class="api-label">POST</span> /users</span><span class="api-label api-label-cors api-uri-template-cors pull-right"><i class="fa fa-cloud-download"></i> CORS</span>
 
 Creates a new user in your Okta organization with or without credentials:
 
@@ -2073,7 +2073,7 @@ curl -v -H "Authorization: SSWS yourtoken" \
 ### Change Password
 {:.api .api-operation}
 
-<span class="api-uri-template api-uri-post"><span class="api-label">POST</span> /users/*:id*/credentials/change_password</span>
+<span class="api-uri-template api-uri-post"><span class="api-label">POST</span> /users/*:id*/credentials/change_password</span><span class="api-label api-label-cors api-uri-template-cors pull-right"><i class="fa fa-cloud-download"></i> CORS</span>
 
 Changes a user's password by validating the user's current password.  This operation can only be performed on users in `STAGED`, `ACTIVE`, `PASSWORD_EXPIRED`, or `RECOVERY` status that have a valid [password credential](#password-object)
 
@@ -2129,7 +2129,7 @@ curl -v -H "Authorization: SSWS yourtoken" \
 ### Change Recovery Question
 {:.api .api-operation}
 
-<span class="api-uri-template api-uri-post"><span class="api-label">POST</span> /users/*:id*/credentials/change_recovery_question</span>
+<span class="api-uri-template api-uri-post"><span class="api-label">POST</span> /users/*:id*/credentials/change_recovery_question</span><span class="api-label api-label-cors api-uri-template-cors pull-right"><i class="fa fa-cloud-download"></i> CORS</span>
 
 Changes a user's recovery question & answer credential by validating the user's current password.  This operation can only be performed on users in **STAGED**, **ACTIVE** or **RECOVERY** `status` that have a valid [password credential](#password-object)
 
