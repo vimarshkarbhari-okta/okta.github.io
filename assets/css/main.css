@@ -126,7 +126,6 @@ ul li {
 }
 
 #topbar .container {
-  width: 1060px;
   margin-top: .35em;
 }
 
@@ -266,10 +265,6 @@ ul li {
   color: #555;
   background-color: #efefef;
   */
-}
-
-.navbar .container {
-  width: 1065px !important;
 }
 
 .navbar .black {

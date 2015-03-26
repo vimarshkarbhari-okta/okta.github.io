@@ -38,15 +38,16 @@
 .docs-body {
   padding: 3em;
   padding-top: 1em;
-  margin-left: 292px;
+  margin-left: 20%;
   min-height: 650px;
 }
 
 .docs-sidebar {
-  background: #e1eff6;
-  width: 292px;
+  background: #032d48;
+  min-width: 300px;
+  width: 20%;
   padding-top: 1em;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
@@ -534,7 +535,7 @@ h6:hover .header-link {
 }
 
 /* The element to be centered, can
-   also be of any width and height */ 
+   also be of any width and height */
 .panel-sdk min-height: 600px; {
   display: inline-block;
   vertical-align: middle;
@@ -596,4 +597,8 @@ margin: 0 0;
   position: absolute;
 }
 
+/* Refresh docs */
 
+#docs {
+	background-color: white;
+}
