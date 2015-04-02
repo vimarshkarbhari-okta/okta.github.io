@@ -90,7 +90,7 @@ The easiest way to implement SAML is to leverage an OpenSource SAML toolkits.  A
 
 ### Single IDP vs Multiple IDPs
 
-If you are building an internal app and you want to SAML-enable it in order to integrate with your corporate SAML identity provider, then you are looking at supporting only a single IDP.  In this case, your app only needs to deal with a single set of IDP metadata (cert, endpoints, etc). 
+If you are building an internal app and you want to SAML-enable it in order to integrate with your corporate SAML identity provider, then you are looking at supporting only a single IDP.  In this case, your app only needs to deal with a single set of IDP metadata (cert, endpoints, etc).
 
 ![Single IDP](/assets/img/saml_guidance_one_idp.png "Single IDP")
 
@@ -104,7 +104,7 @@ A key consideration involves the ACSurl endpoint on the SP side where SAML respo
 
 ### Understanding SP-initiated Login Flow
 
-As discussed earlier, an IDP-initiated login flow starts from the IDP.  Since it begins on the IDP side, there is no additional context about what the user is trying to access on the SP side other than the fact that the user is trying to get authenticated and access the SP.  Typically, once the user is authenticated, the browser will be taken to a generic landing page in the SP. 
+As discussed earlier, an IDP-initiated login flow starts from the IDP.  Since it begins on the IDP side, there is no additional context about what the user is trying to access on the SP side other than the fact that the user is trying to get authenticated and access the SP.  Typically, once the user is authenticated, the browser will be taken to a generic landing page in the SP.
 
 In an SP-initiated flow, the user tries to access a protected resource directly on the SP side without the IDP being aware of the attempt.  Two issues arise.  First is the need to identify the right IDP if authentication of a federated identity is needed.  With SP-initiated login, the SP initially does not know anything about the identity.  As a developer, you need to figure out how the SP can figure out which IDP should be receiving the SAML request.  In some cases, if your application URLs contain subdomain information that is mapped to a unique tenant and IDP, then the resource link being hit is enough to identify the IDP.  If this isn’t the case, then you might need to prompt for additional information from the end user – for eg. a user id, email or a company id – something that allows the SP to figure out which IDP the user attempting to access the resource belongs to.  Remember, you are only prompting for an identifier – not credentials.
 
@@ -134,7 +134,7 @@ Even in cases where the intent is to have all the users of a particular tenant t
 
 ### Implementing a "backdoor"
 
-This is particularly important where the entire population is intended to be SAML-enabled in your application.  Sometimes, there might be a mistake in the SAML configuration – or something changes in SAML IDP endpoints.  In any case, you do not want to completely locked out.  Having a backdoor available for administrator(s) to be able to lock into the system becomes extremely important.  This is often accomplished by having a “secret” login URL that does not trigger a SAML redirection when accessed. Typically, the administrator will use a username/password to login in and make the necessary changes to fix the problem. 
+This is particularly important where the entire population is intended to be SAML-enabled in your application.  Sometimes, there might be a mistake in the SAML configuration – or something changes in SAML IDP endpoints.  In any case, you do not want to completely locked out.  Having a backdoor available for administrator(s) to be able to lock into the system becomes extremely important.  This is often accomplished by having a “secret” login URL that does not trigger a SAML redirection when accessed. Typically, the administrator will use a username/password to login in and make the necessary changes to fix the problem.
 
 ## SAML for Mobile Native Apps
 

@@ -1,6 +1,7 @@
 # -- GETTING STARTED
-- section: getting_started
-  title: Getting Started
+- section: guides
+  slug: guides
+  title: Guides
   pages:
     - design_principles
     - error_codes
@@ -11,6 +12,7 @@
 
 # -- APIS
 - section: api/rest
+  slug: api
   title: API
   pages:
     - authn
@@ -23,12 +25,14 @@
 
 # -- SDK
 - section: sdk/core
+  slug: sdk
   title: SDKs
   pages:
     - api
 
 # -- EXAMPLES
 - section: examples
+  slug: examples
   title: Examples
   pages:
     - session_cookie

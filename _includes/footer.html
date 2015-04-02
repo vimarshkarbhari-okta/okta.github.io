@@ -1,5 +1,5 @@
 
-    <footer class="container main-footer" role="contentinfo">
+    <footer class="container-full-width main-footer" role="contentinfo">
       <div class="row">
         <div class="col-md-7 footer-left">
           &copy; {{ site.time | date: "%Y" }} Okta, Inc. All Rights Reserved
@@ -32,7 +32,6 @@
 
   <script src="/assets/dist/js/jquery.scrollTo.min.js"></script>
   <script src="/assets/dist/js/jquery.localScroll.min.js"></script>
-  <script src="/assets/js/function.js"></script>
 
   {% if include.dist_js_file %}
     <script src="/assets/dist/js/{{ include.dist_js_file }}"></script>
@@ -49,4 +48,6 @@
   {% if page.js_file %}
     <script src="/assets/js/{{ page.js_file }}"></script>
   {% endif %}
+    <script src="/assets/js/function.js"></script>
+
 </html>

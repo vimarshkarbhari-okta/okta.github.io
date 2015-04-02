@@ -1,6 +1,7 @@
 ---
 layout: docs_page
 title: API
+noToc: true
 ---
 
 <div class="container-narrow">
@@ -16,7 +17,6 @@ title: API
               <li><a class="learnmore sdk-more button-white" href="https://github.com/okta/okta-music-store">Sample App</a></li>
             </ul>
         </div>
-        
         <a class="learnmore sdk-learnmore button-white col-xs-10" href="http://www.nuget.org/packages/Okta.Core.Client/">Download SDK</a>
     </div>
     <div class="sdk-wrapper col-xs-3">
@@ -28,7 +28,7 @@ title: API
                 <li><a class="learnmore sdk-more button-white" href="https://github.com/okta/oktasdk-csharp">GitHub</a></li>
             </ul>
         </div>
-        
+
         <a class="learnmore sdk-learnmore button-white col-xs-10" href="https://chocolatey.org/packages/Okta.Core.Automation">Download SDK</a>
     </div>
     <div class="sdk-wrapper col-xs-3">
@@ -39,7 +39,7 @@ title: API
               <li><a class="learnmore sdk-more button-white" href="https://github.com/okta/oktasdk-java">GitHub</a></li>
             </ul>
         </div>
-        
+
         <a class="learnmore sdk-learnmore button-white col-xs-10" href="https://github.com/okta/oktasdk-java">Download SDK</a>
     </div>
   </div><!-- /.row -->
