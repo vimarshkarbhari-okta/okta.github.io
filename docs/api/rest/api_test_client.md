@@ -1,6 +1,7 @@
 ---
 layout: docs_page
 title: API Test Client
+redirect_from: /docs/getting_started/api_test_client.html
 ---
 
 * Will be replaced with the ToC
@@ -21,9 +22,9 @@ title: API Test Client
 2. Launch Postman with new Chrome App Launcher
 
     ![Chrome App Launcher](/assets/img/chrome-ui-app-launcher.png "Chrome App Launcher")
-    
+
     <br>
-    
+
     ![Postman App Icon](/assets/img/postman-icon.png "Postman App Icon")
 
 3. Import the environment template
@@ -36,7 +37,7 @@ title: API Test Client
         ![Manage Environments](/assets/img/postman-ui-manage-env.png "Manage Environments")
 
     3. Click the `Import` button in the **Manage Environments** modal and use the downloaded JSON file
-   
+
         ![Import Environment](/assets/img/postman-ui-import-env.png "Import Environment")
 
         ---
@@ -61,13 +62,13 @@ title: API Test Client
 4. Select and verify your configured environment
 
     1. Ensure you have selected your environment in the pull-down
-       
+
         ![Select Environment](/assets/img/postman-ui-select-env.png "Select Environment")
 
-        > Your selected environment should have your name that you configured above and not say `No environment` or `example.okta.com` 
+        > Your selected environment should have your name that you configured above and not say `No environment` or `example.okta.com`
 
     2. You can preview your configured environment variables by hovering over the `eye icon`
-       
+
         ![Preview Environment](/assets/img/postman-ui-preview-env.png "Preview Environment")
 
 
@@ -105,7 +106,7 @@ The following request example requires a specific user `id`
 
 You can copy an `id` from a previous response such as a `GET` request to list resources and paste it.
 
-   ![Copy and replace ID](/assets/img/postman-ui-paste-id.png "Copy and replace ID in URL") 
+   ![Copy and replace ID](/assets/img/postman-ui-paste-id.png "Copy and replace ID in URL")
 
 You can also set environment variables directly from the right-click context menu.  This is recommended so you can re-use the `id` across multiple requests
 
@@ -115,7 +116,7 @@ Always check the request preview to ensure all **\{\{id\}\}** variables have bee
 
    ![Request preview](/assets/img/postman-ui-req-prevew.png "Request preview")
 
- 
+
 
 
 

@@ -1,7 +1,15 @@
-# -- GETTING STARTED
+# -- GUIDES
 - section: guides
   slug: guides
   title: Guides
+  pages:
+    - overview
+    - add-mfa
+
+# -- APIS
+- section: api/rest
+  slug: api
+  title: API
   pages:
     - design_principles
     - error_codes
@@ -9,12 +17,6 @@
     - enabling_cors
     - api_test_client
     - saml_guidance
-
-# -- APIS
-- section: api/rest
-  slug: api
-  title: API
-  pages:
     - authn
     - factors
     - users

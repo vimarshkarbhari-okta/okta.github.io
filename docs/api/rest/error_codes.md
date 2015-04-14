@@ -1,6 +1,7 @@
 ---
 layout: docs_page
 title: Error Codes
+redirect_from: /docs/getting_started/error_codes.html
 ---
 
 * Will be replaced with the ToC
@@ -80,7 +81,7 @@ This document provides further information about the errors that the Okta API re
 |<a name="E0000081"></a>E0000081|Cannot modify the test attribute because it is a reserved attribute for this application.|400|
 
 
-## Okta Error Codes Listed by HTTP Return Code   
+## Okta Error Codes Listed by HTTP Return Code
 
 <table>
 <tr><th><strong>HTTP Return Code</strong></th><th><strong>Error Code</strong></th><th><strong>Description</strong></th></tr>
@@ -148,7 +149,7 @@ This document provides further information about the errors that the Okta API re
 <tr><td>E0000059</td><td>The connector configuration could not be tested. Make sure that the URL and Authentication Parameters are correct, and that there is an implementation available at the URL provided.</td></tr>
 <tr><td rowspan="1" bgcolor="#FFFFFF"><strong>501</strong></td><td>E0000052</td><td>Endpoint not implemented.</td></tr>
 <tr><td rowspan="1" bgcolor="#FFFFFF"><strong>503</strong></td><td>E0000010</td><td>Service is in read-only mode.</td></tr>
-</table> 
+</table>
 
 
 

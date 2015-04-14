@@ -1,6 +1,7 @@
 ---
 layout: docs_page
 title: Single Sign-On with Okta
+redirect_from: /docs/getting_started/saml_guidance.html
 ---
 
 * Will be replaced with the ToC

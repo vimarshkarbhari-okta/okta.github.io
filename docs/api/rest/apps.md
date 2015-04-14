@@ -3,8 +3,7 @@ layout: docs_page
 title: Apps
 ---
 
-* Will be replaced with the ToC
-{:toc .list-unstyled .toc}
+
 
 ## Overview
 
@@ -148,7 +147,7 @@ IMPORT_NEW_USERS       | User Import            | Creates or links a user in Okt
 IMPORT_PROFILE_UPDATES | User Import            | Updates a linked user's app profile during manual or scheduled imports.
 PROFILE_MASTERING      | Profile Master         | Designates the app as the identity lifecycle and profile attribute authority for linked users.  The user's profile in Okta is *read-only*
 IMPORT_USER_SCHEMA     |                        | Discovers the profile schema for a user from the app automatically
-PUSH_NEW_USERS         | Create Users           | Creates or links a user account in the application when assigning the app to a user in Okta.      
+PUSH_NEW_USERS         | Create Users           | Creates or links a user account in the application when assigning the app to a user in Okta.
 PUSH_PROFILE_UPDATES   | Update User Attributes | Updates a user's profile in the app when the user's profile changes in Okta (Profile Master).
 PUSH_USER_DEACTIVATION | Deactivate Users       | Deactivates a user's account in the app when unassigned from the app in Okta or deactivated.
 REACTIVATE_USERS       | Deactivate Users       | Reactivates an existing inactive user when provisioning a user to the app.
@@ -234,7 +233,7 @@ Specifies credentials and scheme for the application's `signOnMode`.
 
 Attribute        | Description                                                                  | DataType                                              | MinLength | MaxLength | Nullable | Default
 ---------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------- | --------- | --------- | -------- | -------
-scheme           | Determines how credentials are managed for the `signOnMode`                  | [Authentication Scheme](#authentication-schemes)      |           |           | TRUE     | NULL           
+scheme           | Determines how credentials are managed for the `signOnMode`                  | [Authentication Scheme](#authentication-schemes)      |           |           | TRUE     | NULL
 userNameTemplate | Template used to generate a user’s username when the application is assigned via a group or directly to a user | [UserName Template Object](#username-template-object) |           |           | TRUE     | *Okta UserName*
 userName         | Shared username for app                                                      | String                                                | 1         | 100       | TRUE     | NULL
 password         | Shared password for app                                                      | [Password Object](#password-object)                   |           |           | TRUE     | NULL
@@ -399,7 +398,7 @@ _links          | discoverable resources related to the app user               |
 Users in Okta are linked to a user in a target application via an `externalId`.  Okta anchors an user with his or her `externalId` during an import or provisioning synchronization event.  Okta uses the native app-specific identifier or primary key for the user as the `externalId`.  The `externalId` is selected during import when the user is confirmed (reconciled) or during provisioning when the user has been successfully created in the target application.
 
 > SSO Application Assignments (e.g. SAML or SWA) do not have an `externalId` as they are not synchronized with the application.
-  
+
 #### Application User Status
 
 ##### Single Sign-On
@@ -416,14 +415,14 @@ User provisioning in Okta is an asynchronous background job that is triggered du
 
 1. User is assigned to an application that has `PUSH_NEW_USERS` feature enabled
     * Application user will have a `STAGED` status with no `externalId` while the background provisioning job is queued.
-2. When the background provisioning job completes successfully, the application user transitions to the `PROVISIONED` status. 
+2. When the background provisioning job completes successfully, the application user transitions to the `PROVISIONED` status.
     * Application user is assigned an `externalId` when successfully provisioned in target application.  The `externalId` should be immutable for the life of the assignment
 3. If the background provisioning job completes with an error, the application user remains with the `STAGED` status but will have `syncState` as `ERROR`.  A provisioning task is created in the Okta Admin UI that must be resolved to retry the job.
 
 When the `PUSH_PROFILE_UPDATES` feature is enabled, updates to an upstream profile are pushed downstream to the application according to profile mastering priority.  The app user's `syncState` will have the following values:
 
 syncState    | Description
------------- | ----------- 
+------------ | -----------
 OUT_OF_SYNC  | Application user has changes that have not been pushed to the target application
 SYNCING      | Background provisioning job is running to update the user's profile in the target application
 SYNCHRONIZED | All changes to the app user profile have successfully been synchronized with the target application
@@ -498,7 +497,7 @@ Application User profiles are app-specific but may be customized by the Profile 
     "profile": "Standard User"
   }
 }
-~~~ 
+~~~
 
 ## Application Group Model
 
@@ -1492,7 +1491,7 @@ curl -v -H "Authorization: SSWS yourtoken" \
 -X GET "https://your-domain.okta.com/api/v1/apps?filter=user.id+eq+\"00ucw2RPGIUNTDQOYPOF\"&expand=user/00ucw2RPGIUNTDQOYPOF"
 ~~~
 
-> The `expand=user/:id` query parameter optionally return the user's [Application User](#application-user-model) information  in the response body's `_embedded` property. 
+> The `expand=user/:id` query parameter optionally return the user's [Application User](#application-user-model) information  in the response body's `_embedded` property.
 
 ##### Response Example
 {:.api .api-response .api-response-example}
@@ -2493,7 +2492,7 @@ aid       | unique key of [Application](#application-model)                     
 appuser   | user's [credentials](#application-user-credentials-object) and [profile](#application-user-profile-object) for the app | Body       | [Application User](#application-user-model) | FALSE    |
 
 > The [Application User](#application-user-model) must specify the user's `id` and should omit [credentials](#application-user-credentials-object) for applications with [SignOn Modes](#signon-modes) or [Authentication Schemes](#authentication-schemes) that do not require or support credentials.
-> 
+>
 > *You can only specify profile attributes that are not defined by profile mappings when Universal Directory is enabled.*
 
 ##### Response Parameters
@@ -2501,7 +2500,7 @@ appuser   | user's [credentials](#application-user-credentials-object) and [prof
 
 [Application User](#application-user-model) with user profile mappings applied
 
-Your request will be rejected with a `403 Forbidden` status for applications with the `PUSH_NEW_USERS` or `PUSH_PROFILE_UPDATES` features enabled if the request specifies a value for an attribute that is defined by an application user profile mapping (Universal Directory) and the value for the attribute does not match the output of the mapping.  
+Your request will be rejected with a `403 Forbidden` status for applications with the `PUSH_NEW_USERS` or `PUSH_PROFILE_UPDATES` features enabled if the request specifies a value for an attribute that is defined by an application user profile mapping (Universal Directory) and the value for the attribute does not match the output of the mapping.
 
 *It is recommended to omit mapped attributes during assignment to minimize assignment errors.*
 
@@ -2869,9 +2868,9 @@ appuser   | credentials for app                             | Body       | [Appl
 
 [Application User](#application-user-model) with user profile mappings applied
 
-Your request will be rejected with a `403 Forbidden` status for applications with the `PUSH_NEW_USERS` or `PUSH_PROFILE_UPDATES` features enabled if the request specifies a value for an attribute that is defined by an application user profile mapping (Universal Directory) and the value for the attribute does not match the output of the mapping.  
+Your request will be rejected with a `403 Forbidden` status for applications with the `PUSH_NEW_USERS` or `PUSH_PROFILE_UPDATES` features enabled if the request specifies a value for an attribute that is defined by an application user profile mapping (Universal Directory) and the value for the attribute does not match the output of the mapping.
 
-> The Okta API currently doesn't support entity tags for conditional updates.  It is only safe to fetch the most recent profile with [Get Assigned User for Application](#get-assigned-user-for-application), apply your profile update, then `POST` back the updated profile as long as you are the **only** user updating a user's application profile.  
+> The Okta API currently doesn't support entity tags for conditional updates.  It is only safe to fetch the most recent profile with [Get Assigned User for Application](#get-assigned-user-for-application), apply your profile update, then `POST` back the updated profile as long as you are the **only** user updating a user's application profile.
 
 ~~~ json
 {

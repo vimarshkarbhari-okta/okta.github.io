@@ -1,4 +1,21 @@
 $(function() {
+    var sidebarHeight = $('#myScrollspy').prop('scrollHeight');
+    var initialViewPortHeight = $(window).height() - 120;
+    if(initialViewPortHeight < sidebarHeight + 250) {
+        $('#docs-sidebar-wrap').css('min-height', sidebarHeight + 200);
+    }
+
+    //Check for widnow height on resize
+    $(window).resize(function(){
+       var sidebarHeight = $('#myScrollspy').prop('scrollHeight');
+	    var initialViewPortHeight = $(window).height() - 120;
+	    if(initialViewPortHeight < sidebarHeight + 250) {
+	        $('#docs-sidebar-wrap').css('min-height', sidebarHeight + 200);
+	    }
+    });
+
+	var searched = getUrlParameter('search');
+	// $('.docs-body').highlight(searched);
 
   // ------------------------ LINKIFY ANCHORS
 
@@ -38,9 +55,7 @@ for (var level = 1; level <= 6; level++) {
   		var target = $(this.hash);
   	target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
   	if (target.length) {
-  		$('html,body').animate({
-          scrollTop: target.offset().top - fixedNavHeight //offsets for fixed header
-      }, 1000);
+  		$('html,body').scrollTop(target.offset().top - fixedNavHeight);
   		return false;
   	}
   }
@@ -50,9 +65,7 @@ for (var level = 1; level <= 6; level++) {
   if ($(location.href.split("#")[1])) {
   	var target = $('#' + location.href.split("#")[1]);
   	if (target.length) {
-  		$('html,body').animate({
-        scrollTop: target.offset().top - fixedNavHeight //offset height of header here too.
-    }, 1000);
+  		$('html,body').scrollTop(target.offset().top - fixedNavHeight);
   		return false;
   	}
   };
@@ -63,7 +76,7 @@ for (var level = 1; level <= 6; level++) {
   // ------------------------ SCROLL TO TOP BUTTON
 
   var scrolled = false,
-  $docsBody = $('#docs-body'),
+  $docsBody = $('body'),
   $scroller = $('#scroll-top-button');
 
 
@@ -77,43 +90,13 @@ for (var level = 1; level <= 6; level++) {
   		scrolled = false;
   		if ($(window).scrollTop() > 100) {
   			$scroller.addClass('on');
-  			positionScroller();
+  			// positionScroller();
   		}
   		else {
   			$scroller.removeClass('on');
   		}
   	}
   }, 250);
-
-
-  // -- debounce window resize to reposition button
-  // $(window).resize(function() {
-  // 	clearTimeout(this.id);
-  // 	this.id = setTimeout(positionScroller, 50);
-  // });
-
-  // var positionScroller = function() {
-  // 	var pos = $docsBody.width() + $docsBody.offset().left + 100;
-  // 	$scroller.css('left', pos);
-  // }
-
-
-  // ------------------------ STICKY LEFTNAV
-
-//   var wrap = $("#docs-sidebar-wrap"),
-//   $window=$(window);
-//   var fixedScroll = function() {
-//   	if ($window.scrollTop() > 121) {
-//       //wrap.addClass("fixed");
-//   } else {
-//   	wrap.removeClass("fixed");
-//   }
-// }
-//   fixedScroll(); // call on load in case we are already scrolled
-
-//   var lazyFixedScroll = _.debounce(fixedScroll, 15);
-//   $window.on("scroll", lazyFixedScroll);
-
 
   // ------------------------ CORS TEST
 

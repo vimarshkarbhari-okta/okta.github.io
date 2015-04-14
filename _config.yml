@@ -1,6 +1,10 @@
 name: Okta
 highlighter: pygments
 url: http://developer.okta.com/
+
+gems:
+  - jekyll-redirect-from
+
 # -- note `blog/` still deploys, without `index.html` file
 #    to really prevent blog post deployment, use `_drafts/`
 #exclude: [Gemfile, Gemfile.lock, NOTES.txt, README.md, blog, customers, pricing]
@@ -36,9 +40,8 @@ sitemap:
         - "/atom.xml"
         - "/feed.xml"
         - "/feed/index.xml"
+        - "/search.json"
     include_posts:
         - "/index.html"
     change_frequency_name: "change_frequency"
     priority_name: "priority"
-
-showToggleButton: false
