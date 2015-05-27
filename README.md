@@ -59,8 +59,10 @@ and generate the final site content.
 4. Navigate the site and validate your changes
 5. Stop Jekyll with `ctrl+c`
 6. Sync the built _site files with the checked-in code with: `rsync -av _site/ ./`
-7. Git commit and push changes to github. When ready for review create a pull request and mention the users you want to
-   review your changes.
+7. Git commit and push changes to github. 
+8. Check that you changes pass Bacon (http://bacon.trex.saasure.com/#!/commits/developer.okta.com)
+9. Create a pull request and mention the users you want to review your changes.
+10. Click merge button in the Bacon when you are done with your changes
 
 ## Authoring Guide
 
