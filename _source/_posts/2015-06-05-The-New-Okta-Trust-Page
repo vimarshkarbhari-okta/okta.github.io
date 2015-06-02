@@ -1,0 +1,44 @@
+---
+layout: blog_post
+title: The New Okta Trust page
+author: vimarshkarbhari
+tags: [technical design, product]
+---
+
+Here at Okta, we believe amazing products shape a relationship with their customers 
+based on Trust. I think great products are the first step in building this relationship. 
+There are many other aspects which do not really count as product but are becoming seemingly 
+important in this current age of technology.
+
+> When you use a product, every engagement with that product has a direct correlation with your 
+  perception of the value of that product.[^Viabilify]
+
+In the current age of technology it is not just necessary to have a product that elegantly, 
+and simply solves problems which people face everyday, it is table stakes.
+Over the time product experiences have improved considerably and the tolerance 
+towards bad products has drastically reduced. Today with the consumerization of the Enterprise, 
+design and experience matter for all products regardless of how they’re distributed to the end user.
+
+One of today’s most important pieces of real estates other than the technical specification of the 
+product is Product Status/Trust and Customer Support. Having worked on both of these pieces recently 
+and dissecting it from many angles I can only imagine what poor development of these pieces would 
+do to the business. So here at Okta we reimagined the Okta Trust experience from ground up for our customers.
+Developing a ServiceStatus/Trust page presents interesting product and technical challenges.
+
+> Product loyalty follows trust. Communication and Transparency are the cornerstones of Trust.
+
+Lets first look at the Product challenges. The first page which the customers hit when they have 
+issues with the product is Product Status/Trust. Consider yourself lucky if it was a stupid browser issue (like cache) 
+or issue with their laptop. If not, the customer expects transparency (what exactly is wrong) and 
+communication from the Product Status/Trust page.
+
+A Product Status/Trust page is also the page which prospects visit. 
+Initially when the product is gaining momentum the amount of prospects visiting the page are more than the customers.
+
+> As the Product starts to mature and gather more customers the Status/Trust page 
+  has to also metamorphose into serving that purpose better.
+
+### Reference
+
+[^Viabilify]: http://www.viabilify.com/blog/trust
+[^agile-cost-curve]: Scott Ambler. Examining the Agile Cost of Change Curve. Website. http://www.agilemodeling.com/essays/costOfChange.htm
